@@ -1,34 +1,53 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import { useState } from "react";
+import QuoteBox from "./assets/components/QuoteBox";
+import quotes from "./assets/data/quotes.json";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  // Variables
+  const colors = [
+    "#EA047E",
+    "#FF6D28",
+    "#F9D923",
+    "#00F5FF",
+    "#0E49B5",
+    "#54E346",
+  ];
+
+  const quotesLen = quotes.length;
+  const colorsLen = colors.length;
+
+  const randomNumber = function (limit) {
+    return Math.floor(Math.random() * limit);
+  };
+
+  // Initiate random quote and color
+  const [quoteIndex, setQuoteIndex] = useState(randomNumber(quotesLen));
+  const [colorIndex, setColorIndex] = useState(randomNumber(colorsLen));
+
+  // Generate random quote and color
+  const randomQuote = function () {
+    setQuoteIndex(randomNumber(quotesLen));
+    setColorIndex(randomNumber(colorsLen));
+  };
+
+  // Set variables to random values
+  const quote = quotes[quoteIndex].quote;
+  const author = quotes[quoteIndex].author;
+  const color = colors[colorIndex];
 
   return (
     <div className="App">
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src="/vite.svg" className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="card-container" style={{ backgroundColor: color }}>
+        <QuoteBox
+          quote={quote}
+          author={author}
+          color={color}
+          btnHandler={randomQuote}
+        />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

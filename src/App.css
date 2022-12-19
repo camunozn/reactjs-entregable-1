@@ -1,41 +1,109 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  font-size: 62.5%;
+  color: #fff;
+  background-color: #111;
+}
+
+/*************************/
+/*GENERAL COMPONENTS     */
+/*************************/
+
+.card-container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+}
+
+/*************************/
+/*QUOTE BOX COMPONENT    */
+/*************************/
+.quote-box {
+  font-size: 1.2rem;
+  width: 50vw;
+  min-height: 33vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: auto;
+  box-shadow: 0 0.8rem 1.2rem rgba(0, 0, 0, 0.25);
+  transition: color 0.3s;
+}
+
+.quote-phrase {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  margin-bottom: 1.2rem;
+}
+
+.quote-phrase-icon {
+  font-size: 3.2rem;
+}
+
+.quote-phrase-icon i {
+  display: block;
+}
+
+.quote-phrase-text {
   text-align: center;
+  margin: 0.6rem 0 0 0.6rem;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.quote-author {
+  align-self: flex-end;
+  margin-bottom: 1.2rem;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.btn-random {
+  color: #fff;
+  align-self: flex-end;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  border: 1px solid transparent;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.8);
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.btn-random:hover {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.75);
+  transform: translateY(-1.5px);
+}
+
+.btn-random:active {
+  transform: translateY(1px);
+}
+
+/*************************/
+/*QUERIES                */
+/*************************/
+/*******************************************/
+/*BELOW 704px (Portrait tablets and phones)*/
+/*******************************************/
+@media screen and (max-width: 704px) {
+  .card-container {
+    min-width: 32em;
+    min-height: 60em;
   }
-  to {
-    transform: rotate(360deg);
+
+  .quote-box {
+    width: 75vw;
+    min-width: 10em;
+    min-height: 10em;
   }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
-}
-
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
 }
