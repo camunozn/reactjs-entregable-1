@@ -8,10 +8,16 @@ function App() {
   const colors = [
     "#EA047E",
     "#FF6D28",
-    "#F9D923",
-    "#00F5FF",
+    "#E6B325",
+    "#007965",
     "#0E49B5",
-    "#54E346",
+    "#379237",
+    "#590696",
+    "#FF0075",
+    "#1DB9C3",
+    "#FF0000",
+    "#54B435",
+    "#3330E4",
   ];
 
   const quotesLen = quotes.length;
