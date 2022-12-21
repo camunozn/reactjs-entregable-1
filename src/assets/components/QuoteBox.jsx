@@ -5,7 +5,7 @@ const QuoteBox = function ({ quote, author, color, btnHandler }) {
     <div className="quote-box" style={{ color: color }}>
       <div className="quote-phrase">
         <div className="quote-phrase-icon">
-          <i class="fa-solid fa-quote-left"></i>
+          <i className="fa-solid fa-quote-left"></i>
         </div>
         <blockquote className="quote-phrase-text">{quote}</blockquote>
       </div>
@@ -17,7 +17,7 @@ const QuoteBox = function ({ quote, author, color, btnHandler }) {
         onClick={btnHandler}
         style={{ backgroundColor: color }}
       >
-        <i class="fa-solid fa-chevron-right"></i>
+        <i className="fa-solid fa-chevron-right"></i>
       </button>
     </div>
   );
